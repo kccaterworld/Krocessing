@@ -17,22 +17,26 @@ public class UIWindow extends JPanel {
         }
     }
 
-    /* protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g2d = (Graphics2D) g;
-        g2d.setColor(Color.BLUE);
-        g2d.fillRect(50, 50, 100, 70);
-    } */
+    public void makeIDE() {
+        JPanel editor = new JPanel(new BorderLayout(10, 10));
+        editor.add(new JLabel("Your Code: "), BorderLayout.PAGE_START);
+          JTextArea codeArea = new JTextArea(10,10); // rows, columns
+          codeArea.setLineWrap(false);
+          codeArea.setBackground(Color.LIGHT_GRAY);
+          codeArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
+            JScrollPane codeScrollPane = new JScrollPane(codeArea);
+        editor.add(codeScrollPane, BorderLayout.CENTER);
+        editor.add(new JButton("Run Code"), BorderLayout.PAGE_END);
 
-    public JPanel makeIDE() {
-        JPanel codePanel = new JPanel();
-        codePanel.setLayout(new BorderLayout());
-        JTextArea codeArea = new JTextArea();
-        codeArea.setLineWrap(false);
-        JScrollPane codeScrollPane = new JScrollPane(codeArea);
-        codePanel.add(codeScrollPane, BorderLayout.CENTER);
-        frame.getContentPane().add(codePanel);
-        return codePanel;
+        JPanel output = new JPanel(new BorderLayout(10, 10));
+        output.setLayout(new BorderLayout());
+        output.setBackground(Color.DARK_GRAY);
+        JLabel outputLabel = new JLabel("Output:");
+        outputLabel.setForeground(Color.WHITE);
+        output.add(outputLabel, BorderLayout.PAGE_START);
+
+        JSplitPane idePane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, editor, output);
+        frame.getContentPane().add(idePane);
     }
 
     public void setup(String title, int width, int height) {
@@ -43,6 +47,5 @@ public class UIWindow extends JPanel {
         frame.add(this);
         makeIDE();
         frame.revalidate();
-        // paintComponent(getGraphics());
     }
 }
