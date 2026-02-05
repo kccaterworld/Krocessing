@@ -23,3 +23,6 @@ Repository Structure:
   - `output/` - Classes related to the rendering output. Currently includes a basic canvas setup.
 - `build.sh` - A shell script to compile the Java source code into a .jar file on my Arch Linux machine (I chose Arch as a joke initially but stuck with it because I'm too lazy)
 - `build.bat` - A batch script to compile the Java source code into a .jar file on my Windows machine.
+
+Current UI:
+![Krocessing UI](assets/krocessing_ui_snapshot.png)
