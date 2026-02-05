@@ -6,8 +6,14 @@ This project is my own attempt at copying the Processing app. I am using only wh
 
 To Compile:
 ```bash
-jar cfe krocessing.jar krocessing.Main -C . krocessing
+jar cfe krocessing.jar krocessing.Main -C . krocessing # Manual compilation command
 ```
+OR
+```bash
+./build.sh # My fancy, overengineered build script
+```
+
+<br>
 
 To Run:
 ```bash
@@ -17,12 +23,13 @@ java -jar krocessing.jar
 I'm open to any and all suggestions, as this is for me to learn and grow as a programmer.
 
 Repository Structure:
+- `assets/` - Contains images and other assets used in the README and application.
 - `krocessing/` - The main source code for the Krocessing application.
   - `environment/` - Contains classes related to the user interface and environment setup. Currently includes a basic UI window setup.
   - `functions/` - Holds definitions for all the Processing functions, based on documentation on the Processing website, and functions for executing those functions. Currently just a placeholder function for execution.
   - `output/` - Classes related to the rendering output. Currently includes a basic canvas setup.
-- `build.sh` - A shell script to compile the Java source code into a .jar file on my Arch Linux machine (I chose Arch as a joke initially but stuck with it because I'm too lazy)
-- `build.bat` - A batch script to compile the Java source code into a .jar file on my Windows machine.
+- `build.sh` - A shell script to compile the Java source code into a .jar file, and contains logic to only recompile if source files have changed and retake the UI snapshot if needed.
+- `build.bat` - A batch script to compile the Java source code into a .jar file on my Windows machine, which uses an old version of Java for whatever reason.
 
 Current UI:
 ![Krocessing UI](assets/krocessing_ui_snapshot.png)
