@@ -14,11 +14,11 @@ public class UIWindow extends JFrame {
       private JPanel editor;
         private JScrollPane codeScrollPane;
           private JTextArea codeArea;
-      private JButton runButton;
-    private JPanel output;
-      private JScrollPane outputScrollPane;
-        private JLabel outputLabel;
-        private JTextArea outputArea;
+        private JButton runButton;
+      private JPanel output;
+        private JScrollPane outputScrollPane;
+          private JLabel outputLabel;
+          private JTextArea outputArea;
 
     public UIWindow() { super(); }
     public UIWindow(String title, int width, int height) {
