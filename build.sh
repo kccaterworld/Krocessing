@@ -8,10 +8,7 @@ else
   for source in $SOURCES
     do if [ "$source" -nt "krocessing.jar" ]; then
       javac $source
-        if [ $? -ne 0 ]; then
-          echo "Compilation failed!"
-          exit 1
-        fi
+      if [ $? -ne 0 ]; then echo "Compilation failed!" exit 1 fi
       rebuildFlag=true
     fi
   done
